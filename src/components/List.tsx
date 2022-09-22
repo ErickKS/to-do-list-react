@@ -71,12 +71,12 @@ export function List() {
             <Plus size={24} className="text-white"/>
           </Dialog.Trigger>
 
-          <Dialog.Portal className="max-w-screen-sm">
+          <Dialog.Portal>
             <Dialog.Overlay className="bg-black/30 inset-0 fixed"/>
 
             <Dialog.Content 
-              className="fixed bg-[#172034] border-2 border-indigo-700 py-8 px-10 text-white top-1/3 
-              left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px]"
+              className="max-w-sm w-full fixed bg-[#172034] border-2 border-indigo-700 py-8 px-9
+              text-white top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg"
             >
               <Dialog.Title className="text-2xl font-semibold">Add a new task</Dialog.Title>
 
