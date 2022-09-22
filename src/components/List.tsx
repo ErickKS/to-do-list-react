@@ -26,7 +26,7 @@ export function List() {
     event.preventDefault();
 
     if(inputData === '') {
-      alert("o input ta vazio")
+      alert("You need to insert the task before")
     }else {
       handleAddTask(inputData)
       setOpen(false)
