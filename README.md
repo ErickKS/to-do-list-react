@@ -11,7 +11,7 @@
 <br>
 
 <h3 align="center">
-    <img src="./.github/calculator.gif" alt="project gif" height="500px">
+    <img src="./.github/readme-gif.gif" alt="project gif" height="500px">
     <br>
     <a href="https://erickks.github.io/to-do-list-react/">live demo</a>
 </h3>
