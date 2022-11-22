@@ -1,36 +1,43 @@
-import { Trash } from 'phosphor-react'
-import { ListProps } from './List'
+import * as Checkbox from "@radix-ui/react-checkbox";
+import { Check, Trash } from "phosphor-react";
+import { ListProps } from "./List";
 
 interface TasksProps {
-  task: ListProps,
-  onChange: (id: number, done: boolean) => void
-  onClick: (id: number) => void
+  task: ListProps;
+  onCheckedChange: (id: number, done: boolean) => void;
+  onClick: (id: number) => void;
 }
 
-export function TaskSingle({task, onChange, onClick}: TasksProps) {
+export function TaskSingle({ task, onCheckedChange, onClick }: TasksProps) {
   return (
-    <div className="flex gap-4 my-8 p-6 rounded-lg bg-zinc-800 items-center justify-between">
-      <div className='flex gap-4 items-center'>
-        <input
+    <div className="flex gap-4 items-center justify-between p-4 border-b-2 first:border-t-2 border-purple-600">
+      <div className="flex gap-3 items-center">
+        <Checkbox.Root
           id="checkBox"
-          type="checkbox"
           checked={task.done}
-          onChange={e => onChange(task.id, e.target.checked)}
-          className="w-4 h-4 cursor-pointer"
-        />
-        <label 
+          onCheckedChange={() =>
+            onCheckedChange(task.id, task.done === true ? false : true)
+          }
+          className="flex items-center justify-center w-5 h-5 bg-white rounded-[4px] opacity-95 focus:opacity-100"
+        >
+          <Checkbox.Indicator>
+            <Check size={16} weight="bold" className="text-purple-400" />
+          </Checkbox.Indicator>
+        </Checkbox.Root>
+        <label
           htmlFor="checkBox"
-          className="text-white text-lg cursor-pointer"
+          className="text-white text-base cursor-pointer"
         >
           {task.description}
         </label>
       </div>
       <button>
-        <Trash size={28}
+        <Trash
+          size={28}
           onClick={() => onClick(task.id)}
-          className="text-white hover:text-indigo-500 focus:text-indigo-500 
-          ease-linear duration-150 cursor-pointer"/>
+          className="text-white transition-colors hover:text-purple-200"
+        />
       </button>
     </div>
-  )
+  );
 }

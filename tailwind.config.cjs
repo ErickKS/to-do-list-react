@@ -1,18 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.tsx",
-    "./index.html",
-  ],
+  content: ["./src/**/*.tsx", "./index.html"],
   theme: {
-    fontFamily :{
-      sans: ['Open Sans', 'sans-serif']
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+    colors: {
+      black: "#000",
+      white: "#FFF",
+      transparent: "transparent",
+
+      purple: {
+        200: "#7068FF",
+        400: "#23233F",
+        600: "#1F1F35",
+        800: "#141323",
+      },
     },
     extend: {
       backgroundImage: {
-        main: "linear-gradient(0deg, rgba(48,47,59,1) 0%, rgba(0,0,0,1) 30%)",
-      }
+        main: "linear-gradient(116.82deg, #23233F 0%, #0C0C1A 38.02%, #000000 100%)",
+      },
     },
   },
   plugins: [],
-}
+};

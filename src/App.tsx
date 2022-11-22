@@ -1,24 +1,19 @@
-import { Container } from './components/Container';
-import { List } from './components/List';
+import { List } from "./components/List";
 
-import './styles/main.css';
+import "./styles/main.css";
 
 export default function App() {
   return (
-    <Container>
-      <h1 
-        className="text-3xl font-semibold text-white tracking-wider text-center mb-4 uppercase"
-      >
-        Task List
-      </h1>
+    <div className="h-screen flex flex-col items-center justify-center gap-2">
+      <List />
 
-      <List/>
-
-      <p 
-        className="text-sm font-semibold text-white tracking-wider text-center mt-4"
+      <a
+        href="https://github.com/ErickKS"
+        target="_blank"
+        className="text-white underline"
       >
-        Developed by <a href="https://github.com/ErickKS" target="_blank" className='text-indigo-500 underline'>Erick Kuwahara</a>
-      </p>
-    </Container>
-  )   
+        Developed by Erick Kuwahara
+      </a>
+    </div>
+  );
 }

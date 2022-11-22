@@ -17,21 +17,23 @@
 </h3>
 
 ## 📚 Project
+
 <p>After a long time, I finally decided to create a to-do list. It is simple but functional and fully accessible.</p>
 <p>This is my first project using React and TypeScript so it might have some errors which I haven't seen yet. As I learn more, I'll try to update this project for better performance.</p>
 
 <br>
 
 ## 🖥 Technologies
-  * [Html](https://www.w3schools.com/html/)
-  * [Tailwindcss](https://tailwindcss.com/)
-  * [React](https://reactjs.org/)
-  * [TypeScript](https://www.typescriptlang.org/)
-  * [Radix](https://www.radix-ui.com/)
-  * [PhosphorIcons](https://phosphoricons.com/)
-<br>
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Radix](https://www.radix-ui.com/)
+- [PhosphorIcons](https://phosphoricons.com/)
+  <br>
 
 ## 🧾 Features
+
 - [x] Add a new task
 - [x] Mark the task as complete or not
 - [x] Delete a task
