@@ -55,7 +55,6 @@ export function List() {
       }
     }
 
-    console.log(id, newTaskList.length);
     setTasks(newTaskList);
   }
 
