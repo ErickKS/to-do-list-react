@@ -30,7 +30,8 @@
 - [Tailwindcss](https://tailwindcss.com/)
 - [Radix](https://www.radix-ui.com/)
 - [PhosphorIcons](https://phosphoricons.com/)
-  <br>
+
+<br>
 
 ## 🧾 Features
 
