@@ -13,7 +13,7 @@ export interface ListProps {
 export function List() {
   const [tasks, setTasks] = useState<ListProps[]>([
     {
-      id: 1,
+      id: 0,
       description: "Learn React",
       done: false,
     },
@@ -36,8 +36,10 @@ export function List() {
 
   function handleAddTask(taskName: string) {
     let newTaskList = [...tasks];
+    let lastTaskList = newTaskList[newTaskList.length - 1];
+
     newTaskList.push({
-      id: tasks.length + 1,
+      id: newTaskList.length !== 0 ? lastTaskList.id + 1 : 0,
       description: taskName,
       done: false,
     });
@@ -53,7 +55,7 @@ export function List() {
       }
     }
 
-    console.log(id, done);
+    console.log(id, newTaskList.length);
     setTasks(newTaskList);
   }
 
