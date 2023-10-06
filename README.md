@@ -8,36 +8,36 @@
     <a href="#-features">Features</a>
 </p>
 
-<br>
+<br />
 
 <h3 align="center">
-    <img src="./.github/readme-gif.gif" alt="project gif" height="500px">
-    <br>
+    <img src="./.github/gif.gif" alt="project gif" height="500px" />
+    <br />
     <a href="https://erickks.github.io/to-do-list-react/">live demo</a>
 </h3>
 
 ## 📚 Project
 
-<p>After a long time, I finally decided to create a to-do list. It is simple but functional and fully accessible.</p>
-<p>This is my first project using React and TypeScript so it might have some errors which I haven't seen yet. As I learn more, I'll try to update this project for better performance.</p>
+<p>This is a straightforward task management application, built with React and TypeScript, that enables users to create, manage, and keep track of their daily tasks.</p>
+<p>With a user-friendly and intuitive interface, you can add tasks, mark them as completed, and delete them as needed.</p>
 
-<br>
+<br />
 
 ## 🖥 Technologies
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwindcss](https://tailwindcss.com/)
-- [Radix](https://www.radix-ui.com/)
-- [PhosphorIcons](https://phosphoricons.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide Icons](https://lucide.dev)
 
-<br>
+<br />
 
 ## 🧾 Features
 
 - [x] Add a new task
-- [x] Mark the task as complete or not
 - [x] Delete a task
+- [x] Mark the task as complete or incomplete
 - [x] Accessible components
-- [x] Prevention against adding empty tasks
+- [x] Prevention of adding empty tasks
 - [x] Design responsive

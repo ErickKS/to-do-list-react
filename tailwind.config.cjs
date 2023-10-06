@@ -6,20 +6,24 @@ module.exports = {
       sans: ["Inter", "sans-serif"],
     },
     colors: {
-      black: "#000",
-      white: "#FFF",
+      black: "#000000",
+      white: "#F5F5F5",
       transparent: "transparent",
 
-      purple: {
-        200: "#7068FF",
-        400: "#23233F",
-        600: "#1F1F35",
-        800: "#141323",
-      },
+      primary: "#6D28D9",
+      "primary-dark": "#430D99",
+
+      gray: "#18181B",
+      "gray-dark": "#13111B",
+
+      red: "#DA1A3C",
     },
     extend: {
       backgroundImage: {
-        main: "linear-gradient(116.82deg, #23233F 0%, #0C0C1A 38.02%, #000000 100%)",
+        gradient: "linear-gradient(135deg, #6D28D9 -0.69%, #430D99 99.31%)",
+      },
+      boxShadow: {
+        main: "0 2px 12px 0 #430D99;",
       },
     },
   },
