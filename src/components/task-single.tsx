@@ -1,32 +1,23 @@
-import { Dispatch, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { Trash2 } from "lucide-react";
-import { ListProps } from "../App";
+
+import { Task } from "../hooks/useListTasks";
+import { useListTasks } from "../hooks/useListTasks";
+
 import { Checkbox } from "./checkbox";
 
 interface TasksProps {
-  task: ListProps;
-  handleTasks: Dispatch<React.SetStateAction<ListProps[]>>;
-  onDelete: (id: string) => void;
+  task: Task;
 }
 
-export function TaskSingle({ task, handleTasks, onDelete }: TasksProps) {
+export function TaskSingle({ task }: TasksProps) {
   const [taskCheck, setTaskCheck] = useState(false);
+  const [removeFromList, setTaskStatus] = useListTasks((state) => [state.removeTaskFromList, state.setTaskStatus]);
 
   function handleCheckedChange() {
     setTaskCheck(!taskCheck);
-
-    handleTasks((tasks) =>
-      tasks.map((t) => {
-        if (t.id === task.id) {
-          return {
-            ...t,
-            done: !taskCheck,
-          };
-        }
-        return t;
-      })
-    );
+    setTaskStatus(task.id);
   }
 
   return (
@@ -36,7 +27,7 @@ export function TaskSingle({ task, handleTasks, onDelete }: TasksProps) {
           {task.description}
         </Checkbox>
       </div>
-      <button onClick={() => onDelete(task.id)} className="group/button outline-none rounded">
+      <button onClick={() => removeFromList(task.id)} className="group/button outline-none rounded">
         <Trash2
           className={clsx(
             "stroke-white opacity-0 transition",

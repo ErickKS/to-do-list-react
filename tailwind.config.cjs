@@ -25,6 +25,15 @@ module.exports = {
       boxShadow: {
         main: "0 2px 12px 0 #430D99;",
       },
+      animation: {
+        "fade-in": "fade-in 1s cubic-bezier(0.4, 0, 0.6, 1) forwards",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [],

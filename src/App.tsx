@@ -1,29 +1,18 @@
-import { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import { v4 as uuidv4, v4 } from "uuid";
+import { useState, ChangeEvent } from "react";
 import clsx from "clsx";
 import { Plus } from "lucide-react";
 
+import { useListTasks } from "./hooks/useListTasks";
+
 import { Dialog } from "./components/dialog";
 import { TaskSingle } from "./components/task-single";
-
-export interface ListProps {
-  id: string;
-  description: string;
-  done: boolean;
-}
 
 export default function App() {
   const [openDialog, setOpenDialog] = useState(false);
   const [inputData, setInputData] = useState("");
   const [inputAlert, setInputAlert] = useState(false);
 
-  const [tasks, setTasks] = useState<ListProps[]>([
-    {
-      id: v4(),
-      description: "Learn React",
-      done: false,
-    },
-  ]);
+  const [tasks, addTask] = useListTasks((state) => [state.tasks, state.addTaskToList]);
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
@@ -38,22 +27,10 @@ export default function App() {
       return;
     }
 
-    setTasks([
-      ...tasks,
-      {
-        id: v4(),
-        description: inputData,
-        done: false,
-      },
-    ]);
+    addTask(inputData);
+
     setOpenDialog(false);
     setInputData("");
-  }
-
-  function handleTaskDelete(taskId: string) {
-    const newTaskList = tasks.filter((tasks) => tasks.id !== taskId);
-
-    setTasks(newTaskList);
   }
 
   return (
@@ -82,13 +59,9 @@ export default function App() {
                     autoComplete="off"
                     autoFocus
                     onChange={handleInputChange}
-                    className={clsx(
-                      "px-3 py-2 bg-transparent border border-[#1E2937] rounded outline-none",
-                      "focus:border-primary",
-                      {
-                        "border-red": inputAlert,
-                      }
-                    )}
+                    className={clsx("px-3 py-2 bg-transparent border border-[#1E2937] rounded outline-none", "focus:border-primary", {
+                      "border-red": inputAlert,
+                    })}
                   />
                 </>
               </Dialog>
@@ -97,7 +70,7 @@ export default function App() {
 
           <div className="flex flex-col gap-2">
             {tasks.map((task) => (
-              <TaskSingle key={task.id} task={task} handleTasks={setTasks} onDelete={handleTaskDelete} />
+              <TaskSingle key={task.id} task={task} />
             ))}
           </div>
         </div>
@@ -107,7 +80,7 @@ export default function App() {
         Developed by <span className="text-white">Erick Kuwahara</span>
       </a>
 
-      <img src="./blur.svg" alt="" className="absolute -z-10 top-0 left-1/5 -translate-x-1/5 min-w-max"/>
+      <img src="./blur.svg" alt="" className="absolute -z-10 top-0 left-1/5 -translate-x-1/5 min-w-max animate-fade-in" />
     </div>
   );
 }
